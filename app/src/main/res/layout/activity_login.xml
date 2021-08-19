@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="onClick" type="android.view.View.OnClickListener" />
+        <variable name="title" type="String" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:overScrollMode="never"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/login_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:focusableInTouchMode="true"
+            android:focusable="true">
+
+            <include
+                android:id="@+id/login_toolbar"
+                layout="@layout/toolbar_mypage"
+                android:onClick="@{onClick}"
+                android:title="@{title}"/>
+
+            <EditText
+                android:id="@+id/insert_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:textSize="15dp"
+                android:textColor="@android:color/background_dark"
+                android:fontFamily="@font/gamjaflower_regular"
+                android:includeFontPadding="false"
+                android:hint="아이디"
+                android:gravity="center|start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_toolbar"
+                android:maxLines="1"
+                android:imeOptions="actionDone"/>
+
+            <EditText
+                android:id="@+id/insert_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:textSize="15dp"
+                android:textColor="@android:color/background_dark"
+                android:fontFamily="@font/gamjaflower_regular"
+                android:includeFontPadding="false"
+                android:hint="비밀번호"
+                android:gravity="center|start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insert_id"
+                android:maxLines="1"
+                android:imeOptions="actionDone"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/login_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/insert_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/gray_round_button"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="10dp"
+                android:onClick="@{onClick}">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center_horizontal"
+                    android:textSize="22dp"
+                    android:fontFamily="@font/gamjaflower_regular"
+                    android:includeFontPadding="false"
+                    android:text="로그인"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClick}"
+                app:layout_constraintEnd_toEndOf="@id/login_button"
+                app:layout_constraintTop_toBottomOf="@id/login_button"
+                android:layout_marginTop="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="회원가입"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="14dp"
+                    android:letterSpacing="-0.02"
+                    android:fontFamily="@font/gamjaflower_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="8dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
